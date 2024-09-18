@@ -7,20 +7,18 @@ interface BasketProps {
   onClose: () => void;
   isActive: boolean;
   cartItems: ProductItem[];
-  onRemove: (id: number) => void; // Function to remove item
+  onRemove: (id: number) => void; 
+  orderCart: () => void;
 }
 
-function Basket({ onClose, isActive, cartItems, onRemove }: BasketProps) {
+function Basket({ onClose, isActive, cartItems, onRemove, orderCart }: BasketProps) {
   React.useEffect(() => {
     if (isActive) {
-      // Block scroll when the basket is open
       document.body.style.overflow = 'hidden';
     } else {
-      // Restore scroll when the basket is closed
       document.body.style.overflow = '';
     }
     return () => {
-      // Cleanup: Restore scroll when component unmounts
       document.body.style.overflow = '';
     };
   }, [isActive]);
@@ -64,7 +62,7 @@ function Basket({ onClose, isActive, cartItems, onRemove }: BasketProps) {
           <p className="price-products">
             Payable: ${cartItems.reduce((total, item) => total + item.price, 0).toFixed(2)}
           </p>
-          <button className="btn-order">Place an order</button>
+          <button onClick={() => orderCart()} className="btn-order">Place an order</button>
         </div>
       </div>
     </div>

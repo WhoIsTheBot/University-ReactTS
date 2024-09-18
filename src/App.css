@@ -187,7 +187,6 @@ header>ul {
 /* --- Каталог продуктів --- */
 
 .shop {
-    max-width: 80%;
     margin: auto;
 }
 
@@ -195,6 +194,7 @@ header>ul {
 @media screen and (max-width: 700px) {
     .search {
         flex-direction: column;
+        padding: 0 15px;
         gap: 20px;
     }
 }
@@ -209,6 +209,8 @@ header>ul {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 25px;
+    padding: 0 25px;
 }
 
 .search-block {
@@ -262,9 +264,8 @@ input {
 
 
 .products {
-    margin-top: 25px;
-    margin-bottom: 25px;
-
+    margin: auto;
+    max-width: 1080px;
     display: flex;
     gap: 30px;
     flex-wrap: wrap;
@@ -386,7 +387,7 @@ input {
 
 .card {
     display: flex;
-    margin: auto;
+    margin: 0 auto;
     flex-direction: column;
     border: 1px solid black;
     padding: 10px;
@@ -465,12 +466,12 @@ input {
 footer {
     background-color: rgb(255, 224, 86);
     padding: 20px;
+    margin-top: 25px;
 }
 
 .footer-wraper {
     max-width: 1080px;
     margin: auto;
-
     display: flex;
     justify-items: center;
     justify-content: space-between;
@@ -592,6 +593,11 @@ footer {
     text-align: center;
     margin-top: 10px;
     
+}
+.modulInfo img{
+     display: block;
+    margin: auto;
+   
 }
 .modulInfo p{
     color: #6e6e6e;

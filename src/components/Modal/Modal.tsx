@@ -1,4 +1,5 @@
 import React from 'react';
+import Fun from '../../assets/photo/icon/happy.png';
 
 interface ModalProps {
   onClose: () => void;
@@ -8,13 +9,10 @@ interface ModalProps {
 const Modal: React.FC<ModalProps> = ({ onClose, isOpen }) => {
   React.useEffect(() => {
     if (isOpen) {
-      // Заблокувати прокрутку
       document.body.style.overflow = 'hidden';
     } else {
-      // Відновити прокрутку
       document.body.style.overflow = '';
     }
-    // Відновлюємо прокрутку при розмонтуванні компонента
     return () => {
       document.body.style.overflow = '';
     };
@@ -32,11 +30,7 @@ const Modal: React.FC<ModalProps> = ({ onClose, isOpen }) => {
         </div>
         <div className='modulInfo'>
           <h3>Welcome to THE SIGMA STORY!</h3>
-          <p>
-            At THE SIGMA STORY, our mission is to provide high-quality products and exceptional
-            service to our customers. Founded in 2018, we have been dedicated to delivering
-            excellence in through innovation and a customer-centric approach.
-          </p>
+          <img src={Fun} alt="icon" width={120}/>
           <h3>Who We Are</h3>
           <p>
             We are a passionate team of professionals committed to. Our diverse background and expertise

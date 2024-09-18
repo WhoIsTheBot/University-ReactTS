@@ -51,6 +51,19 @@ function App() {
     }
   };
 
+  const orderCart = () => {
+    setCartItems([]);
+  
+    setAddedItems((prevState) => {
+      const updatedItems = { ...prevState };
+      Object.keys(updatedItems).forEach((key) => {
+        updatedItems[parseInt(key)] = false;
+      });
+      return updatedItems;
+    });
+  };
+  
+
   return (
     <>
       {isBasketOpened && (
@@ -59,6 +72,7 @@ function App() {
           isActive={isBasketOpened}
           cartItems={cartItems}
           onRemove={onRemoveFromCart}
+          orderCart={orderCart}
         />
       )}
       {isModalOpened && <Modal onClose={() => setIsModalOpened(false)} isOpen={isModalOpened} />}
@@ -71,6 +85,7 @@ function App() {
         
         addedItems={addedItems}
         onToggleItem={onToggleItem}
+
       />
       <Footer />
     </>
